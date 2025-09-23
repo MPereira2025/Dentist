@@ -1,0 +1,106 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Logica;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+/**
+ *
+ * @author massi
+ */
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Persona implements Serializable {
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int id;
+private String ci;
+private String name;
+private String lastname;
+private int tel;
+private String adresss;
+@Temporal(TemporalType.DATE)
+private Date dateborn;
+
+    public Persona() {
+    }
+
+    public Persona(int id, String ci, String name, String lastname, int tel, String adresss, Date dateborn) {
+        this.id = id;
+        this.ci = ci;
+        this.name = name;
+        this.lastname = lastname;
+        this.tel = tel;
+        this.adresss = adresss;
+        this.dateborn = dateborn;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCi() {
+        return ci;
+    }
+
+    public void setCi(String ci) {
+        this.ci = ci;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public int getTel() {
+        return tel;
+    }
+
+    public void setTel(int tel) {
+        this.tel = tel;
+    }
+
+    public String getAdresss() {
+        return adresss;
+    }
+
+    public void setAdresss(String adresss) {
+        this.adresss = adresss;
+    }
+
+    public Date getDateborn() {
+        return dateborn;
+    }
+
+    public void setDateborn(Date dateborn) {
+        this.dateborn = dateborn;
+    }
+
+
+}
