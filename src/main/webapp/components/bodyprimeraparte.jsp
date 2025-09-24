@@ -3,11 +3,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <body id="page-top">
 
-    
-    
+    <!-- validacion sesion-->
+    <% HttpSession misession = request.getSession();
+    String usuario = (String) request.getSession().getAttribute("usuario");
+    if(usuario == null){
+        response.sendRedirect("sinLogin.jsp");
+    }
+    %>
     
    
-    
     <!-- Page Wrapper -->
     <div id="wrapper">
 
